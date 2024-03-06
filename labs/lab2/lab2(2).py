@@ -1,0 +1,19 @@
+from math import fabs
+x2 = 1
+a2 = 1
+b2 = 1.51
+h2 = 0.05
+n = 1
+d = 10 ** (-5)
+sum = 0
+result = 1
+while x2 <= b2:
+    while fabs(result) >= d:
+        result *= -1 ** (n+1) * ((x2-1) ** n) / n
+        sum += result
+        n += 1
+    print("x2 =", round(x2, 2), "\t", sum)
+    sum = 0
+    x2 += h2
+    n = 1
+    result = 1
